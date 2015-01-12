@@ -1,0 +1,26 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Filter</h1>
+<form action="" method="post" name="login">
+    {{ form.hidden_tag() }}
+    <p>
+        Filter by mark<br>
+        {{ form.mark(size=2) }}
+        {% for error in form.mark.errors %}
+          <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+</p>
+<p>
+        And specify a section<br>
+        {{ form.section() }}
+        {% for error in form.section.errors %}
+          <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+    <br>
+    </p>
+{#    <p>{{ form.remember_me }} Remember Me</p>#}
+    <p><input type="submit" value="Filter"></p>
+</form>
+{% endblock %}

@@ -1,0 +1,36 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Search</h1>
+    <form action="" method="post" name="login">
+        {{ form.hidden_tag() }}
+        <p>
+            Please enter a search term<br>
+            {{ form.token(size=80) }}
+            {% for error in form.token.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}<br>
+        </p>
+
+        <p>
+            And specify a section<br>
+            {{ form.section() }}
+            {% for error in form.section.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}<br>
+            <br>
+        </p>
+
+        <p>
+            Optionally, set limit
+            {{ form.limit() }}
+            {% for error in form.limit.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}<br>
+
+        </p>
+        {#    <p>{{ form.remember_me }} Remember Me</p>#}
+        <p><input type="submit" value="Search"></p>
+    </form>
+{% endblock %}

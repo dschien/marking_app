@@ -1,0 +1,16 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.comment-list {
+    list-style: none;
+}
+
+.entry-text {
+
+}
+
+.entry-weight{
+    font-size: small;
+    color: cadetblue;
+}

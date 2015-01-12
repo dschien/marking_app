@@ -1,0 +1,18 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <p>
+        {% for row in results %}
+            <h2>{{ row[0] }}</h2> <span class="entry-weight">{{ row[2] }}</span>
+            <ul class="comment-list">
+                {% for entry in row[1] %}
+                    <li><span class="entry-text">{{ entry[0] }}</span>
+                    </li>
+
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </p>
+{% endblock %}
