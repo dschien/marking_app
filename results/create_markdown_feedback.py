@@ -57,7 +57,7 @@ def create_markdown(candidate, group):
         output.close()
     except ValueError as e:
         # print e
-        pass
+        logging.warn("Problem with candiate {}: {}".format(candidate,e))
 
 
 def process_candidates():
